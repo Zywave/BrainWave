@@ -1,0 +1,29 @@
+﻿<section>
+    <link rel="stylesheet" href="../../App/styles/warnings.css" type="text/css"/>
+    <link rel="stylesheet" href="/App/style.css" type="text/css" />
+    
+    <!--<link rel="stylesheet" href="../../App/styles/disabled.css" type="text/css" />--->
+    <h2>Upload</h2>
+
+    <div>
+        <span>Please select a file to upload.</span>
+        <input type="file" id="fileUpload" data-bind="event: {change:handleSelectedFile}">
+        <br/>
+        <span>Please enter a display name for your file.</span>
+        <br/>
+        <input id="displayName">
+        <br/>
+        <br/>
+        <span>Please enter a short description for your file.</span>
+        <br/>
+        <input id="description">
+        <br/>
+        <br/>
+        <span class="warning" id="warning"></span>
+        <br/>
+        <button id="submit" data-bind="click:upload" disabled>Submit</button>
+        <span class="warning" id="required">Select a file to upload.</span>
+        <br/>
+        <span id="confirmation"></span>
+    </div>
+</section>

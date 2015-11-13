@@ -1,0 +1,20 @@
+﻿.jqx-icon-arrow-down {
+    cursor: default;
+}
+
+#jqxgrid {
+    cursor: default;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.disabled {
+    color: #808080;
+}
+
+.btn-default {
+    color: ButtonText;
+    background-color: ButtonFace;
+}

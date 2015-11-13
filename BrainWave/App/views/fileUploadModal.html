@@ -1,0 +1,20 @@
+﻿<section>
+
+    <div class="modal-content messageBox" style="background-color: white">
+        <div class="modal-header">
+            <button type="button" class="close" data-bind="click: ok">&times;</button>
+            <h3 data-bind="text: title"></h3>
+        </div>
+        <div class="modal-body">
+            <!--ko compose: $data.model-->
+            <!--/ko-->
+        </div>
+        <div class="modal-footer">
+            <div class="modal-footer-container">
+                <div class="modal-footer-note"></div>
+                <button class="btn btn-primary modal-close-button" data-bind="click: ok">Close</button>
+            </div>
+        </div>
+    </div>
+
+</section>

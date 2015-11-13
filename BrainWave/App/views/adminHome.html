@@ -1,0 +1,25 @@
+﻿<section>
+    <link rel="stylesheet" href="../../Scripts/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="../../App/styles/clickables.css" type="text/css" />
+    <link rel="stylesheet" href="../../App/styles/courseDetails.css" type="text/css" />
+    <link rel="stylesheet" href="../../App/style.css" type="text/css" />
+    <h1 class="jumbotron text-center">Welcome Admin</h1>
+    <button id="createButton" class="btn-lg btn-default" data-bind="id:CreateFiles, click:createCourse">Create Course</button>
+    <div class="row">
+        <div class="col-xs-12 col-lg-6">
+            <h2>Courses</h2>
+            <div id="jqxDiv">
+                <div id="jqxgrid">
+                </div>
+            </div>
+        </div>
+        <div id="courseDetails" div class="col-xs-12 col-lg-6">
+            <h3 id="courseName" data-bind="text:selectedCourseName"></h3>
+            <blockquote id="courseDescription" data-bind="text:selectedCourseDescription"></blockquote>
+            <button class="btn btn-default" type="button" id="takeCourse" data-bind="click:takeCourse">Preview Course</button>
+            <button class="btn btn-default" id="modifyCourse" data-bind="click:modifyCourse">Modify Course</button>
+            <button class="btn btn-default" id="deleteCourse" data-bind="click:deleteCourse">Delete Course</button>
+            <h3 id="close" data-bind="click:revert">X</h3>
+        </div>
+    </div>
+</section>

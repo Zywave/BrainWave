@@ -1,0 +1,27 @@
+﻿<section style="max-height: 20%;max-width: 100%">
+    <h2>Files</h2>
+    <table style="width:100%">
+        <tr>
+            <td style="vertical-align: top;">
+                <div class="row" data-bind="foreach: files">
+                    <div>
+                        <h3 data-bind="text:DisplayName"></h3>
+                        <p data-bind="text:Description"></p>
+                        <p data-bind="text:authorDisplay"></p>
+                        <h6>File Type: <span data-bind="text:FileType"></span></h6>
+                        <br/>
+                        <input type="button" data-bind="click:OnClickEvent,value:DisplayType,attr:{name:JSON.stringify($data)}" />
+                        <input type="button" data-bind="click:Delete,value:DeleteName,attr:{name:JSON.stringify($data)}" />
+                        <input type="button" data-bind="click:Replace,value:ReplaceName,attr:{name:JSON.stringify($data)}" />
+                    </div>
+                    <a data-bind="attr:{href:Src,id:Id,download:Filename}"></a>
+                </div>
+            </td>
+            <td style="vertical-align:top">
+                <div id="display" align="center" style="max-height: 100%;max-width: 100%; vertical-align: top; text-align: left;">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>

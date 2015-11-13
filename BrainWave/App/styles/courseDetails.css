@@ -1,0 +1,18 @@
+﻿#courseDetails{
+    padding-left: 0px;
+}
+
+#courseName{
+     max-width: inherit;
+}
+
+#courseDescription{
+    max-width: inherit;
+
+}
+#jqxDiv{
+    max-width: inherit;
+    overflow-x: auto;
+    max-height: 500px;
+    overflow-y: auto;
+}

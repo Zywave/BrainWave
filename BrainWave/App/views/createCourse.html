@@ -1,0 +1,54 @@
+﻿<section style="max-height: 20%;max-width: 100%">
+    <link rel="stylesheet" href="../../App/style.css" type="text/css">
+    <link rel="stylesheet" href="../../App/styles/clickables.css" type="text/css"/>
+
+    <div class="leftSidebar">
+        <h3 class="clickable" onclick="viewMetaDataEditor()">Meta Data</h3>
+        <h3>Steps</h3>
+        <button class="btn btn-default" onclick="addStep(true)">Add Step</button>
+        <table class="table" id="StepTable" style="margin: 2px;">
+            <tbody data-bind="foreach: steps()">
+                    <tr>
+                        <td>
+                            <div data-bind="attr:{id:('step' + $index())}, click: function(){selectStep( $index() );}" class="step">
+                                <span data-bind="html: Title"></span>
+                                <div class="deleteStep" data-bind="click: function(){deleteStep( $index() );}">&#10006;</div>
+                            </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <br />
+        <button class="btn btn-default" onclick="addStep(true)">Add Step</button>
+        <button class="btn btn-default" onclick="moveCurStepUp()">Move Step Up</button>
+        <button class="btn btn-default" onclick="moveCurStepDown()">Move Step Down</button>
+    </div>
+    <div class="main">
+        <div class="mainContent" id="pageTitle" data-bind="text:displayName"></div>
+        <div class="mainContent" id="courseContent">
+            <div id="metaData">
+                <h2>Course Name:&nbsp;</h2><input type="text" id="coursename" data-bind="value: courseName()" /><br />
+                <h2>Course Description:</h2><textarea id="description" rows="4" cols="50" data-bind="value: courseDescription()"></textarea><br />
+                <h2>Estimated Time:</h2><input type="text" id="estimatedtime" data-bind="value: courseEstimatedTime()" />
+            </div>
+            <div id="step" style="display: none;">
+                <span style="font-size: 25px;">Step Title:</span>
+                <span id="title" class="pseudoTextBox" contenteditable="true" data-bind="htmlInput: currentStepTitle()"></span>
+                <div id="editor" contenteditable="true" data-bind="htmlInput: currentStepContent()"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottomBar container">
+        <div id="bottomBarButtonDiv">
+            <button id="attachFileButton" class="bottomBarButton btn-lg" data-bind="click:$data.showfileSelectDisplayFilesModal">Attach File</button>
+            <input type="button" class="bottomBarButton btn-lg" data-bind="click:submitCourse" value="Submit" />
+        </div>
+        <div id="attachedFileDiv" data-bind="foreach: currentStepFiles">
+            <span class="file" data-bind="attr:{id:Id}">
+                <span class="fileName" data-bind="text:DisplayName"></span>
+                <span class="closeButton" data-bind="click:$parent.removeFile">X</span>
+            </span>
+        </div>
+
+    </div>
+</section>

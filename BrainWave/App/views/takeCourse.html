@@ -1,0 +1,25 @@
+﻿<section>
+    <link rel="stylesheet" href="../../App/styles/clickables.css" type="text/css" />
+    <link rel="stylesheet" href="../../App/styles/courseDetails.css" type="text/css" />
+    <link rel="stylesheet" href="../../App/style.css" type="text/css" />
+
+    <div class="leftSidebar container">
+        <h3 data-bind="text: name"></h3>
+        <table class="table" id="StepTable" style="margin: 2px;">
+            <tbody data-bind="foreach: steps">
+                <tr>
+                    <td class="clickable" data-bind="text: Title, click: stepClicked, attr: {class: stepState + ' list-item'}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main">
+        <div id="pageTitle" class="mainContent"></div>
+        <div id="courseContent" class="mainContent"></div>
+    </div>
+    <div class="bottomBar">
+        <button class="btn btn-default" type="button" id="finishLater" data-bind="click: finishLater">Finish Later</button>
+        <button class="btn btn-default" type="button" id="back" data-bind="click: back">Back</button>
+        <button class="btn btn-default" type="button" id="next" data-bind="click: next">Next</button>
+    </div>
+</section>
